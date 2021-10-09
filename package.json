@@ -1,0 +1,28 @@
+{
+  "name": "earliest-sunrise",
+  "version": "0.1.0",
+  "description": "A tool to calculate the length of the day with the earliest sunrise from a set of 100 random worldwide locations.",
+  "keywords": [
+    "day length",
+    "sunrise",
+    "sunset"
+  ],
+  "homepage": "https://github.com/Jakub-L/earliest-sunrise#readme",
+  "bugs": "https://github.com/Jakub-L/earliest-sunrise/issues",
+  "repository": "github:Jakub-L/earliest-sunrise",
+  "author": "Jakub Lech <jakub.pawel.lech@gmail.com> (https://github.com/Jakub-L/)",
+  "license": "MIT",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "typescript": "^4.4.3"
+  }
+}
