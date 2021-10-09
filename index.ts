@@ -33,3 +33,11 @@ const randomFloat = (min: number, max: number): number => {
 const randomCoordinates = (): Coordinates => {
   return { lat: randomFloat(-90, 90), lng: randomFloat(-180, 180) };
 };
+
+/**
+ * Returns an array of a specified length, populated by random coordinates
+ * @param {number} count - Desired length of output array
+ * @returns {Array.<Coordinates>} Array of random coordinates
+ */
+const randomLocations = (count: number): Array<Coordinates> =>
+  R.map(randomCoordinates, R.range(0, count));
