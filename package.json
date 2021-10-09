@@ -30,6 +30,7 @@
   "dependencies": {
     "@types/ramda": "^0.27.45",
     "axios": "^0.22.0",
+    "dayjs": "^1.10.7",
     "ramda": "^0.27.1"
   }
 }
