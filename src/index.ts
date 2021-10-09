@@ -6,7 +6,7 @@ import * as R from 'ramda';
  * @property {number} lat - Latitude represented as float between -90 (90 °S) and 90 (90 °N)
  * @property {number} lng - Longitude represented as float between -180 (180 °W) and 180 (180 °E)
  */
-type Coordinates = {
+export type Coordinates = {
   lat: number;
   lng: number;
 };
@@ -30,14 +30,21 @@ const randomFloat = (min: number, max: number): number => {
  * Creates random latitude-longitude pair
  * @returns {Coordinates} Random coordinates
  */
-const randomCoordinates = (): Coordinates => {
-  return { lat: randomFloat(-90, 90), lng: randomFloat(-180, 180) };
-};
+const randomCoordinates = (): Coordinates => ({
+  lat: randomFloat(-90, 90),
+  lng: randomFloat(-180, 180)
+});
 
 /**
  * Returns an array of a specified length, populated by random coordinates
  * @param {number} count - Desired length of output array
  * @returns {Array.<Coordinates>} Array of random coordinates
+ * @throws {RangeError} Count must be greater than 0
  */
-const randomLocations = (count: number): Array<Coordinates> =>
-  R.map(randomCoordinates, R.range(0, count));
+const randomLocations = R.ifElse(
+  R.gt(0),
+  () => {
+    throw RangeError('Count must be greater than 0');
+  },
+  R.compose(R.map(randomCoordinates), R.range(0))
+);
