@@ -1,11 +1,17 @@
-// JSDOC TYPE DEFINITIONS
+import * as R from 'ramda';
+
+// TYPE DEFINITIONS
 /**
  * @typedef {Object} Coordinates
  * @property {number} lat - Latitude represented as float between -90 (90 °S) and 90 (90 °N)
  * @property {number} lng - Longitude represented as float between -180 (180 °W) and 180 (180 °E)
  */
+type Coordinates = {
+  lat: number;
+  lng: number;
+};
 
-// MAIN SECTION
+// MAIN MODULE
 /**
  * Generates a random floating point number within the specified range
  * @param {number} min - Lower bound (inclusive) of the range
@@ -21,9 +27,9 @@ const randomFloat = (min: number, max: number): number => {
 };
 
 /**
- * Generates random latitude-longitude pair
+ * Creates random latitude-longitude pair
  * @returns {Coordinates} Random coordinates
  */
-const randomCoordinates = (): { lat: number; lng: number } => {
+const randomCoordinates = (): Coordinates => {
   return { lat: randomFloat(-90, 90), lng: randomFloat(-180, 180) };
 };
