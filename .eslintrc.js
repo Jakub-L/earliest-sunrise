@@ -11,5 +11,23 @@ module.exports = {
     ecmaVersion: 12
   },
   plugins: ['@typescript-eslint'],
-  rules: {}
+  rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never'
+      }
+    ]
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
+  }
 };
