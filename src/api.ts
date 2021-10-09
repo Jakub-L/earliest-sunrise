@@ -3,7 +3,7 @@ import { Coordinates } from './types';
 
 const BASE_URL = 'https://api.sunrise-sunset.org/json';
 
-const MAX_CONCURRENT_REQUEST = 5;
+const MAX_CONCURRENT_REQUESTS = 5;
 const REQUEST_RETRY_INTERVAL_MS = 10;
 let PENDING_REQUESTS = 0;
 
@@ -13,7 +13,7 @@ api.interceptors.request.use(
   (config) =>
     new Promise((resolve) => {
       const interval = setInterval(() => {
-        if (PENDING_REQUESTS < MAX_CONCURRENT_REQUEST) {
+        if (PENDING_REQUESTS < MAX_CONCURRENT_REQUESTS) {
           PENDING_REQUESTS += 1;
           clearInterval(interval);
           resolve(config);
