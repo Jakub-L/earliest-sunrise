@@ -1,8 +1,8 @@
 import axios from 'axios';
-
 import { Coordinates } from './types';
 
 const BASE_URL = 'https://api.sunrise-sunset.org/json';
+
 const MAX_CONCURRENT_REQUEST = 5;
 const REQUEST_RETRY_INTERVAL_MS = 10;
 let PENDING_REQUESTS = 0;
